@@ -17,6 +17,10 @@ function App() {
       setLatestMessage(message.data);
     }
     setSocket(socket);
+    
+    return  ()=> {
+      socket?.close();
+    }
   }, [])
 
   if(!socket){
